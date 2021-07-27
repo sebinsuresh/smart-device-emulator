@@ -8,11 +8,49 @@ An electron app to emulate an Internet of Things (IoT) space.
 
 The project is split into various folders based on their functionality.
 
+- /
+
+The root directory contains
+
+- /assets/
+
+The assets directory
+
+- /components/
+
+The components directory
+
+- /Pages/
+
+  The pages directory
+
+  - /editor/
+
+  The editor sub-directory within pages
+
+  - /index/
+
+  The index sub-directory within pages
+
+  - /spaceman-assets/
+
+  The spaceman-assets sub-directory within pages
+
+  - /tester/
+
+  The tester sub-directory within pages
+
 ### Screenshots
 
 ## How to install and run the IoT Emulator
 
 ### Package/tools/frameworks needed
+
+- NodeJS: [Link](https://nodejs.org/en/). For building & running the emulator GUI.
+- Vagrant: [Link](https://www.vagrantup.com/downloads). For creating the virutal machines for operating systems like RaspbianOS that the emulator interfaces with.
+- RaspbianOS image: [Link](https://www.raspberrypi.org/software/operating-systems/). The image for the OS that vagrant loads and interfaces with.
+- ssh tools?
+- C++ compiler??
 
 ### Steps to install & run
 
