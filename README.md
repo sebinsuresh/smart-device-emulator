@@ -8,35 +8,35 @@ An electron app to emulate an Internet of Things (IoT) space.
 
 The project is split into various folders based on their functionality.
 
-- /
+- `/`
 
-The root directory contains
+The root directory contains the starting point for the Electron app, including the package information and commands to start the application using `npm`. The file `main.js`
 
-- /assets/
+- `/assets/`
 
 The assets directory
 
-- /components/
+- `/components/`
 
 The components directory
 
-- /Pages/
+- `/Pages/`
 
   The pages directory
 
-  - /editor/
+  - `/editor/`
 
   The editor sub-directory within pages
 
-  - /index/
+  - `/index/`
 
   The index sub-directory within pages
 
-  - /spaceman-assets/
+  - `/spaceman-assets/`
 
   The spaceman-assets sub-directory within pages
 
-  - /tester/
+  - `/tester/`
 
   The tester sub-directory within pages
 
