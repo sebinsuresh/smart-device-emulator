@@ -10,7 +10,7 @@ The project is split into various folders based on their functionality.
 
 - `/`
 
-The root directory contains the starting point for the Electron app, including the package information and commands to start the application using `npm`. The file `main.js`
+The root directory contains the starting point for the Electron app, including the package information and commands to start the application using `npm`. The file `main.js` (...)
 
 - `/assets/`
 
