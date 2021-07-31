@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" />
+    <title>Home</title>
+</head>
+
+
+<body>
+
+    <div class="main-wrapper d-flex flex-column h-100 w-100">
+        <div class="icon-bar">
+            <div id="fileMenu" class="dropdown">
+                <button type="button" class="btn animate-ripple dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-file"></i>File</i>
+                </button>
+                <div class="dropdown-menu">
+                    <a @click="aboutDialog" class="dropdown-item" href="#">About</a>
+                    <a @click="close" class="dropdown-item" href="#">Quit</a>
+                </div>
+            </div>
+            <a class="active animate-ripple" href="#"><i class="fa fa-home"></i>Home</a>
+            <a route-link="pages/editor/editor.html" class="animate-ripple" href="#"><i
+                    class="fa fa-pencil"></i>Editor</a>
+            <a route-link="pages/tester/tester.html" class="animate-ripple" href="#"><i
+                    class="fa fa-check"></i>Tester</a>
+        </div>
+
+        <div class="main-div flex-grow-1 d-flex flex-column">
+            <section
+                class="flex-grow-1 buttons-wrapper d-flex justify-content-center align-content-center align-items-center flex-column">
+                <button route-link="pages/tester/tester.html"
+                    class="men-button w-50 shadow-effect animate-ripple">Tester</button>
+                <div class="seperator w-50"></div>
+                <button @click="newVimDialog" class="men-button shadow-effect w-50 animate-ripple">Create
+                    New Vim</button>
+                <div class="seperator w-50"></div>
+                <button @click="deleteVimDialog" class="men-button w-50 shadow-effect animate-ripple">Delete
+                    Vim</button>
+            </section>
+
+            <footer class="footer-main p-3">
+                <div class="d-flex justify-content-between">
+                    <a @click="aboutDialog" href="javascript:;" class="animate-ripple footer-link">Info</a>
+                    <a id="themeToggle" @click="toggleTheme" href="javascript:;" class="animate-ripple footer-link"></a>
+                </div>
+            </footer>
+
+        </div>
+
+
+    </div>
+
+    <!-- loader -->
+    <div class="a-loader"><i class="fa fa-fw fa-circle-o-notch  fa-spin"></i></div>
+    <script src="../global.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

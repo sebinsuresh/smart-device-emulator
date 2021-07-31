@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link rel="stylesheet" href="./tester.css" />
+
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../assets/bootstrap-tagsinput/src/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="../spaceman-assets/styles/index.css" />
+    <link rel="stylesheet" type="text/css" href="../spaceman-assets/styles/simplebar.css" />
+    <script src="../spaceman-assets/external-libraries/simplebar.min.js"></script>
+    <title>Home</title>
+</head>
+
+
+<body>
+
+    <div class="h-100 d-flex flex-column w-100">
+        <div class="icon-bar">
+            <div id="fileMenu" class="dropdown">
+                <button type="button" class="btn animate-ripple dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-file"></i>File</i>
+                </button>
+                <div class="dropdown-menu">
+                    <a @click="aboutDialog" class="dropdown-item" href="#">About</a>
+                    <a @click="close" class="dropdown-item" href="#">Quit</a>
+                </div>
+            </div>
+            <a route-link="pages/index/index.html" class="animate-ripple" href="#"><i class="fa fa-home"></i>Home</a>
+            <a route-link="pages/editor/editor.html" class="animate-ripple" href="#"><i
+                    class="fa fa-pencil"></i>Editor</a>
+            <a route-link="pages/tester/tester.html" class="active animate-ripple" href="#"><i
+                    class="fa fa-check"></i>Tester</a>
+        </div>
+
+        <div class="main-div d-flex split-h flex-column flex-grow-1">
+            <div id="top" class="d-flex split">
+                <div id="left" class="d-flex flex-column">
+                    <div class="p-3 d-flex flex-column justify-content-around align-content-center align-items-center">
+                        <!-- place for the text -->
+                        <p class="top-text text-center p-4 no-select">Devices emulator using Virtual Environments</p>
+                        <div class="b-group d-flex w-100 justify-content-center align-items-center">
+                            <button @click="selectProgram" class="men-button shadow-effect animate-ripple"
+                                id="programFileDOM">Select
+                                Program</button>
+                            <div>OR</div>
+                            <button route-link="pages/editor/editor.html"
+                                class="men-button shadow-effect animate-ripple">Open
+                                Editor</button>
+                        </div>
+                        <div class="seperator mt-3 mb-3 w-70"></div>
+
+                        <button @click="vagrant" class="men-button shadow-effect animate-ripple" id="vmFolderDOM">Select
+                            Virtual Machine</button>
+
+ <!--                        <div class="select shadow-effect select-os mt-3">
+                            <select id="library-select">
+                                <option disabled selected>Select Library</option>
+                                <option>Wiring Pi</option>
+                            </select>
+                            <div class="select__arrow"></div>
+                        </div> -->
+
+                        <div class="seperator mt-3 mb-3 w-70"></div>
+                        <div class="b-group d-flex w-100 justify-content-center align-items-center">
+                            <button @click="compile" class="men-button shadow-effect animate-ripple" id="compileButton"
+                                style="background-color: red;" disabled><span>Compile</span></button>
+                            <div>&</div>
+                            <button @click="execute" class="men-button shadow-effect animate-ripple" id="executeButton"
+                                style="background-color: red;" disabled>Execute</button>
+                        </div>
+                        <div class="seperator mt-3 mb-3 w-70"></div>
+
+                        <div class="accessory w-100">
+                            <div class="b-group d-flex w-100 justify-content-center align-items-center">
+                                <button @click="addAccessory" class="men-button shadow-effect animate-ripple"
+                                    type="button" id="argsAdd">Add</button>
+                                <button @click="removeAccesory" class="men-button shadow-effect animate-ripple bl-0"
+                                    type="button" id="argsRemove">Remove</button>
+                            </div>
+                            <div class="accessoryInputs" id="accessoryInputs">
+                            </div>
+                        </div>
+                        <div class="seperator mt-3 mb-3 w-70"></div>
+                        <div class="form-group shadow-effect pl-5 pr-5 pt-2 pb-2 d-flex flex-column">
+                            <label for="args">Use Arguments ? <input type="checkbox" id="useArguments"></label>
+                        </div>
+                        <div id="argsData" class="w-100" hidden>
+                            <div class="b-group d-flex w-100 justify-content-center align-items-center">
+                                <button @click="argsAdd" class="men-button shadow-effect animate-ripple" type="button"
+                                    id="argsAdd">Add</button>
+                                <button @click="argsRemove" class="men-button shadow-effect animate-ripple bl-0"
+                                    type="button" id="argsRemove">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <div class="header">
+                        <div class="header-buttons-c-r">
+                            <button title="Refresh" class="clear-button" @click="reload"><i @click="reload"
+                                    class="fa fa-fw fa-refresh"></i></button>
+                        </div>
+                        <strong>Output</strong>
+                        <div class="header-buttons-c-r">
+                            <button title="Clear" class="clear-button" @click="clearOutput"><i @click="clearOutput"
+                                    class="fa fa-fw fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="output-wrap p-3">
+                        <pre id="output">
+                        </pre>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <!-- Space visualizer that allows for dragging devices around -->
+                <div id="visParent">
+                    <div id="visualizer">
+                        <!-- <div class="deviceContainer draggable"></div> -->
+                        <!-- <canvas id="visualizer-canvas"></canvas> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- loader -->
+    <div class="a-loader"><i class="fa fa-fw fa-circle-o-notch  fa-spin"></i></div>
+
+
+    <script src="../global.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/bootstrap-tagsinput/src/bootstrap-tagsinput.js"></script>
+    <script src="./tester.js"></script>
+</body>
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+<script src="../spaceman-assets/external-libraries/zdog.dist.min.js"></script>
+<script src="../spaceman-assets/external-libraries/zfont.min.js"></script>
+
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+<script>
+    Zfont.init(Zdog);
+</script>
+<script src="../spaceman-assets/external-libraries/interact.min.js"></script>
+<script type="module" src="../spaceman-assets/index.js"></script>
+
+</html>

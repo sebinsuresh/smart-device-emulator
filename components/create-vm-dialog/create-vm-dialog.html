@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./create-vm-dialog.css" />
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" />
+    <title>Create New Vim</title>
+</head>
+
+
+<body>
+
+    <div class="main-wrapper d-flex flex-column h-100 w-100">
+        <div class="main-div flex-grow-1 d-flex flex-column">
+            <section
+                class="flex-grow-1 buttons-wrapper d-flex justify-content-between pt-5 pb-3 align-content-center align-items-center flex-column">
+                <div class="select shadow-effect select-os">
+                    <select id="os-select">
+                        <option disabled selected>Select OS</option>
+                        <option>Ubuntu</option>
+                        <option>Raspbian</option>
+                        <option>Centos</option>
+                    </select>
+                    <div class="select__arrow"></div>
+                </div>
+
+
+                <div class="d-flex flex-row mb-5 justify-content-around align-items-center w-2">
+                    <button @click="close"
+                        class="b-1 pl-3 flex-grow-1 d-flex justify-content-between align-items-center text-left men-button animate-ripple">Cancel</button>
+                    <button @click="createVim"
+                        class="b-1 pl-3 flex-grow-1 d-flex justify-content-between align-items-center text-left men-button animate-ripple">Create</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="../../pages/global.js"></script>
+    <script src="./create-vm-dialog.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+@import "../global.scss";
+
+.split {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-div {
+    color: var(--main-color);
+    overflow: auto;
+}
+.gutter {
+    background-color: var(--second-bg);
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-vertical {
+    background-color: var(--second-bg);
+    z-index: 1000;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: row-resize;
+}
+
+#bottom {
+    background-color: #003049;
+    z-index: 100;
+    overflow: auto;
+    padding: 20px;
+    * {
+        color: #8ecae6;
+        font-family: "Poppins", sans-serif;
+    }
+}
+
+.gutter.gutter-horizontal {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+    cursor: col-resize;
+}
+
+.men-button {
+    border: none;
+    background: transparent;
+    color: var(--main-color);
+    padding: 10px 20px;
+    border: 1px solid var(--third-bg);
+    min-width: 100px;
+}
+
+.bootstrap-tagsinput {
+    min-width: 200px;
+    background: transparent !important;
+    input {
+        color: var(--main-color);
+    }
+    .tag {
+        border: none;
+        background: teal;
+        color: var(--main-color);
+        padding: 0px 5px;
+        border: 1px solid var(--third-bg);
+    }
+}
+
+#left {
+    // height: calc(100vh - 33px);
+    overflow: auto;
+}
+
+.dynamic-button {
+    align-self: center !important;
+    margin-top: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    min-width: 90px;
+}
+
+.dynamic-field {
+    display: flex;
+    .select {
+        margin-bottom: 0px !important;
+
+        select {
+            padding: 7px 25px !important;
+        }
+        .select__arrow {
+            top: 28px;
+            right: 12px;
+        }
+    }
+}
+
+#right {
+    // height: calc(100vh - 33px);
+    overflow: auto;
+    color: var(--main-color) !important;
+    pre {
+        color: var(--main-color) !important;
+    }
+    .header {
+        background: var(--second-bg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0px;
+        button {
+            background-color: transparent;
+            border: none;
+            margin: 0px 5px;
+        }
+        strong {
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.b-group {
+    button {
+        flex: 1;
+    }
+    div {
+        width: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 100%;
+    }
+}
+
+.form-control {
+    background: transparent !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--main-color) !important;
+    border-radius: 0px !important;
+}
+
+.select {
+    max-width: 300px;
+}
+
+.bl-0 {
+    border-left: 0px !important;
+}

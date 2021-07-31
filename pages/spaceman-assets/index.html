@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Prototype 4</title>
+
+    <!-- Poppins Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styling for this page -->
+    <link rel="stylesheet" href="./styles/index.css" />
+
+    <!-- Scrollbar js framework -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <noscript>
+      <style>
+        /**
+        * Reinstate scrolling for non-JS clients
+        */
+        .simplebar-content-wrapper {
+          overflow: auto;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <h1 class="maintitle">Welcome to your Device Space</h1>
+
+    <!-- Space visualizer that allows for dragging devices around -->
+    <div id="visParent">
+      <div id="visualizer">
+        <!-- <div class="deviceContainer draggable"></div> -->
+        <!-- <canvas id="visualizer-canvas"></canvas> -->
+      </div>
+    </div>
+    
+  </body>
+  <script src="./external-libraries/zdog.dist.min.js"></script>
+  <script src="./external-libraries/zfont.min.js"></script>
+  <script>
+    Zfont.init(Zdog);
+  </script>
+  <script src="./external-libraries/interact.min.js"></script>
+  <script type="module" src="index.js"></script>
+</html>

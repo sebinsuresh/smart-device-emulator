@@ -1,0 +1,14 @@
+@import "../global.scss";
+
+body {
+    margin: 0;
+}
+
+.men-button {
+    border: none;
+    background: transparent;
+
+    color: var(--main-color);
+
+    padding: 10px 0px;
+}

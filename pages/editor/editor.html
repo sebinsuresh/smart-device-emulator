@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link rel="stylesheet" href="./editor.css" />
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css" />
+    <title>Home</title>
+</head>
+
+
+<body>
+
+    <div id="app" class="d-flex flex-column h-100">
+        <div class="icon-bar">
+            <div id="fileMenu" class="dropdown">
+                <button type="button" class="btn animate-ripple dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-file"></i>File</i>
+                </button>
+                <div class="dropdown-menu">
+                    <a v-on:click="openDoc" class="dropdown-item" href="#">Open</a>
+                    <a v-on:click="saveFile" class="dropdown-item" href="#">Save</a>
+                    <a :disabled="!file" v-on:click="saveAsFile" class="dropdown-item" href="#">Save As</a>
+                    <a v-on:click="aboutDialog" class="dropdown-item" href="#">About</a>
+                    <a v-on:click="close" class="dropdown-item" href="#">Quit</a>
+                </div>
+            </div>
+            <a route-link="pages/index/index.html" class="animate-ripple" href="#"><i class="fa fa-home"></i>Home</a>
+            <a route-link="pages/editor/editor.html" class="active animate-ripple" href="#"><i
+                    class="fa fa-pencil"></i>Editor</a>
+            <a route-link="pages/tester/tester.html" class="animate-ripple" href="#"><i
+                    class="fa fa-check"></i>Tester</a>
+        </div>
+
+        <div class="main-div d-flex flex-grow-1 flex-column">
+            <div class="header-line-wrapper">
+                <ul class="header-line-menu d-flex ">
+                    <li class="flex-grow-1 d-flex m-0 p-0"><input :value="file || ''" readonly class="flex-grow-1"
+                            type="text" id="openedFile" v-on:click="openDoc"><button v-on:click="closeDoc" v-if="file"
+                            class="closeFileButton"><i class="fa fa-fw fa-times"></i></button><button
+                            v-on:click="openDoc" class="fileOpenButton"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                    </li>
+                    <li class="animate-ripple"><button v-on:click="saveFile">Save</button></li>
+                    <li class="animate-ripple"><button :disabled="!file" v-on:click="saveAsFile">Save as</button></li>
+                </ul>
+            </div>
+
+            <div class="editor-wrapper">
+                <!-- <div class="sidebar-editor d-flex flex-column">
+                    <ul class="counter d-flex flex-column">
+                        <li class="single-line" v-for="i in getLineBreaks()">{{i}}</li>
+                    </ul>
+                </div> -->
+                <div id="editor" class="editor-div flex-grow-1" contenteditable=""></div>
+                <!-- <textarea class="editor-div" v-model="content"></textarea> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- loader -->
+    <div class="a-loader"><i class="fa fa-fw fa-circle-o-notch  fa-spin"></i></div>
+
+    <script src="../global.js"></script>
+    <script src="../../node_modules/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="../../node_modules/popper.js/dist/popper.min.js"></script> -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="./editor.js"></script>
+</body>
+
+</html>

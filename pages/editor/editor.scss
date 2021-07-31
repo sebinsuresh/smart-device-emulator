@@ -1,0 +1,62 @@
+@import "../global.scss";
+
+.main-div {
+    color: var(--main-color);
+
+    .editor-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        .sidebar-editor {
+            width: 40px;
+            height: 100%;
+            background: var(--second-bg);
+        }
+
+        .editor-div {
+            flex-grow: 1;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .header-line-menu {
+        list-style-type: none;
+        margin: 0;
+        background: var(--second-bg);
+        li {
+            cursor: pointer;
+            padding: 2px 20px !important;
+            margin: 2px 0px !important;
+            &:hover {
+                background: var(--third-bg);
+            }
+
+            button {
+                cursor: pointer;
+                padding: 2px 20px !important;
+                margin: 2px 0px !important;
+                border: none;
+                background: transparent;
+                color: var(--main-color);
+                &:disabled {
+                    opacity: 0.5;
+                }
+            }
+
+            input {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                &:focus {
+                    outline: none;
+                }
+                color: var(--main-color);
+                padding: 0px 20px !important;
+                font-size: smaller;
+            }
+        }
+    }
+}
